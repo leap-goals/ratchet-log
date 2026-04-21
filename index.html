@@ -38,7 +38,6 @@
             font-size: 1.5rem;
             font-weight: 300;
             margin-bottom: 30px;
-            border-bottom: 1px solid var(--main-pink);
             padding-bottom: 15px;
         }
 
@@ -79,7 +78,6 @@
         .export-section { 
             margin-top: 30px; 
             padding-top: 20px; 
-            border-top: 2px dashed var(--main-pink); 
         }
 
         textarea { 
@@ -148,8 +146,7 @@
         <label class="item"><input type="checkbox" value="唇が潤ってる"> 唇が潤ってる</label>
         <label class="item"><input type="checkbox" value="唇の血色がよい"> 唇の血色がよい</label>
         <label class="item"><input type="checkbox" value="髪の毛がしっとりしている"> 髪の毛がしっとりしている</label>
-        <label class="item"><input type="checkbox" value="髪に天使の輪ができている"> 髪に天使の輪ができている</label>
-    </div>
+     
 
     <div class="category">
         <h3>Body</h3>
@@ -179,12 +176,12 @@
     <label class="item"><input type="checkbox" value="オラクルをキャッチしやすくなった"> オラクルをキャッチしやすくなった</label>
     <label class="item"><input type="checkbox" value="難しい本が読めるようになった"> 難しい本が読めるようになった</label>
     <label class="item"><input type="checkbox" value="心が穏やかで静か"> 心が穏やかで静か</label>
-    <label class="item"><input type="checkbox" value="トラウマや不快な記憶で情動が乱れなくなった"> トラウマや不快な記憶で情動が乱れなくなった</label>
+    <label class="item"><input type="checkbox" value="不快な記憶で情動が乱れなくなった"> 不快な記憶で情動が乱れなくなった</label>
 </div>
 
 
     <div class="export-section">
-        <button onclick="exportLog()">LOGを生成する</button>
+        <button onclick="exportLog()">観測</button>
         <textarea id="output" readonly placeholder="フィードバックがここに表示されます..."></textarea>
         <button class="copy-btn" onclick="copyLog()">コピーする</button>
     </div>
@@ -200,7 +197,7 @@
         logText += `----------------------------\n`;
         
         if (checkboxes.length === 0) {
-            logText += "現状維持（変化を待機中）";
+            logText += "待機中";
         } else {
             checkboxes.forEach((cb) => {
                 logText += `・${cb.value}\n`;
